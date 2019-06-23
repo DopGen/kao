@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Kao</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" href="wheelpicker/wheelpicker.css">
+  <script src="https://kit.fontawesome.com/ffdace2dfe.js"></script>
+  <script src="wheelpicker/wheelpicker.js"></script>
+</head>
+
+<body>
+  <section class="header">
+    <h1 class="name">Kao</h1>
+  </section>
+  <div class="inputs">
+    <input type="text" id="mainInput">
+    <button id="clear"><i class="fas fa-trash"></i></button>
+    <button id="copy"><i class="fas fa-clipboard"></i></button>
+  </div>
+  <button id="create">Create</button>
+  <button id="collection">Collection</button>
+  <script>
+    var leftSide = "(,(҂,[⑇,ʕ,[,(╬,(ꐦ,(#,ꉂ,꒰,((╬,(；,(｡,ꀯ,{{|└(,(‡,〴,ヾ(,Σ(,₍₍".split(",");
+    var arms = "凸,┌П┐,╭∩╮,┌∩┐,ᕕ,｡゜, ゜｡,☞,┌,┐,ರೃ,૮,ა,◝,◟,⋌,⋋,」,/,＼,／".split(",");
+    var rightSide = "),!),⑇],⁾⁾,ʔ,],メ),＋）,#),ᘰ,)┘|}},꒱,╬),メ）,〵, )ﾉ彡☆".split(",");
+    var eyes = "｀,´,ಠ,⊙,►,◄,-,>,<,^,▼,=,¬,◣,◢,͠ຈ,≧,≦,￣,⌣́,ﾟ◥,◤ﾟ,⓪,○･｀,´･○,ᵒ̌,ᵒ̌,● ,Ò,Ó,*,ு,๑･,･๑,͠°,ꑒ᷅,*,ᇂ, ू˃̣̣̣̣̣̣,˂̣̣̣̣̣̣ ू,눈,▀ེ,@,>,<,⋋,⋌,Ŏ,ᗒ,ᗕ,ꂧ᷆,๑,•᷅ ,▽,゜,＠".split(",");
+    var nose = "0,益,⌒,▂,△,︿,ι,,_,皿,n,‿,Ĺ̯,Д,ω,▱,ᆺ,∀,‸,Ω,͟ʖ,⺫,▼,˛,へ,ε,言,⌂,Ĺ̯,m,Q,U,人,▂,ಠ⌣ಠ,ᗣ,⺫,ꁞ,௭,ʍ,∩,.,ロ,⌓,◇".split(",");
+    var picker1 = new WheelPicker({
+      title: "/left cheek/─────/arms/─────/nose/─────/eyes/─────/right cheek/",
+      data: [leftSide, arms, nose, eyes, rightSide],
+      onSelect: function(selected) {
+        alert(selected[0].value);
+      }
+    });
+    document.getElementById("create").onclick = function() {
+      picker1.show();
+      return false;
+    };
+    document.getElementById("clear").onclick = function() {
+      document.getElementById("mainInput").value = "";
+    };
+    document.getElementById("copy").onclick = function() {
+      const {
+        clipboard
+      } = require('electron');
+      clipboard.writeText(document.getElementById("mainInput").value);
+    };
+
+    var inputs = picker1.container.querySelectorAll(".wheelpicker-wheel")
+
+    function setWheelInput(wheelId) {
+      inputs[wheelId].addEventListener('dblclick', function() {
+        var valueList = String(picker1.getValue());
+        var value = valueList.split(',');
+        document.getElementById("mainInput").value += value[wheelId];
+      });
+    }
+    setWheelInput(0);
+    setWheelInput(1);
+    setWheelInput(2);
+    setWheelInput(3);
+    setWheelInput(4);
+  </script>
+</body>
+
+</html>
