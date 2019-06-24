@@ -60,6 +60,12 @@
   float: left
 }
 
+.wheelpicker-actions .btn-del {
+  float: right;
+  color: #ff1d1d;
+  font-weight: 700
+}
+
 .wheelpicker-title {
   text-align: center;
   font-size: 1em;
