@@ -74,7 +74,8 @@
       _bindEvents: function() {
         this._onFocus = function(t) {
           t.target.blur(), this.show()
-        }.bind(this), this.control && this.control.addEventListener("focus", this._onFocus), this.options.hideOnBackdrop && this.container.querySelector(".wheelpicker-backdrop").addEventListener("click", this._cancel.bind(this)), this.container.querySelector(".wheelpicker-actions .btn-cancel").addEventListener("click", this._cancel.bind(this)), this.container.querySelector(".wheelpicker-actions .btn-del").addEventListener("click", function(){document.getElementById("mainInput").value = document.getElementById("mainInput").value.slice(0, -1);}), this.container.querySelector(".wheelpicker-backdrop").addEventListener(this.transitionendName, this._backdropTransEnd.bind(this))
+        }.bind(this), this.control && this.control.addEventListener("focus", this._onFocus), this.options.hideOnBackdrop && this.container.querySelector(".wheelpicker-backdrop").addEventListener("click", this._cancel.bind(this)),this.container.querySelector(".wheelpicker-actions .btn-cancel").addEventListener("click", function(){document.getElementById("create").style.display = "initial";
+              document.getElementById("collection").style.display = "initial";}), this.container.querySelector(".wheelpicker-actions .btn-cancel").addEventListener("click", this._cancel.bind(this)), this.container.querySelector(".wheelpicker-actions .btn-del").addEventListener("click", function(){document.getElementById("mainInput").value = document.getElementById("mainInput").value.slice(0, -1);}), this.container.querySelector(".wheelpicker-backdrop").addEventListener(this.transitionendName, this._backdropTransEnd.bind(this))
       },
       _onChange: function(t) {
         this.options.onChange && this.options.onChange.call(this, t, this.getSelectedItems()[t])

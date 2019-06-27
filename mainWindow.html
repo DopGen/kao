@@ -36,6 +36,8 @@
     });
     document.getElementById("create").onclick = function() {
       picker1.show();
+      document.getElementById("create").style.display = "none";
+      document.getElementById("collection").style.display = "none";
       return false;
     };
     document.getElementById("clear").onclick = function() {
