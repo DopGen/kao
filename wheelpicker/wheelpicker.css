@@ -33,7 +33,6 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #f7f7f7;
   font-size: 16px;
   color: #000;
   -webkit-user-select: none;
@@ -44,7 +43,14 @@
 
 .wheelpicker-actions {
   overflow: hidden;
-  border-bottom: 1px solid #c6c6c6
+  border-bottom: 1px solid #c6c6c6;
+  box-shadow:
+    0 0 0.05vw 0.2vw #ddffd7,
+    0 0 0.2vw 0.3vw #97f286,
+    0 0 2vw 0.2vw #3ef71b,
+    inset 0 0 1.5vw 0.2vw #3ef71b,
+    inset 0 0 0.4vw 0.1vw #97f286,
+    inset 0 0 0.5vw 0.1vw #ddffd7
 }
 
 .wheelpicker-actions button {
@@ -57,26 +63,27 @@
 }
 
 .wheelpicker-actions .btn-cancel {
-  float: left
+  float: left;
+  color: white
 }
 
 .wheelpicker-actions .btn-del {
   float: right;
-  color: #ff1d1d;
-  font-weight: 700
+  color: white
 }
 
 .wheelpicker-title {
   text-align: center;
+  color: white;
   font-size: 1em;
   line-height: 44px;
   margin: 0;
-  padding: 0px 50px 0px 0px;
+  padding: 0px 50px 0px 0px
 }
 
 .wheelpicker-main {
   position: relative;
-  background: #fff
+  background: rgba(0, 0, 0, 0)
 }
 
 .wheelpicker-wheels {
@@ -110,7 +117,9 @@
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap
+  white-space: nowrap;
+  color: #ffd8d8;
+  padding: 0 3.5rem 0 3.5rem
 }
 
 .wheelpicker-item-disabled {
@@ -136,23 +145,24 @@
 .wheelpicker-mask-top {
   top: 0;
   height: 50%;
-  background: -webkit-linear-gradient(top, #fff, hsla(0, 0%, 100%, .5) 75%);
-  background: linear-gradient(180deg, #fff, hsla(0, 0%, 100%, .5) 75%)
 }
 
 .wheelpicker-mask-btm {
   bottom: 0;
   height: 50%;
-  background: -webkit-linear-gradient(bottom, #fff, hsla(0, 0%, 100%, .5) 75%);
-  background: linear-gradient(0deg, #fff, hsla(0, 0%, 100%, .5) 75%)
 }
 
 .wheelpicker-mask-current {
   height: 34px;
   top: 50%;
   margin-top: -18px;
-  border-top: 1px solid #c6c6c6;
-  border-bottom: 1px solid #c6c6c6
+  box-shadow:
+    0 0 0.05vw 0.2vw #ddffd7,
+    0 0 0.2vw 0.3vw #97f286,
+    0 0 2vw 0.2vw #3ef71b,
+    inset 0 0 1.5vw 0.2vw #3ef71b,
+    inset 0 0 0.4vw 0.1vw #97f286,
+    inset 0 0 0.5vw 0.1vw #ddffd7
 }
 
 .wheelpicker.shown .wheelpicker-backdrop {
